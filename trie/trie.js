@@ -8,6 +8,7 @@ class Node {
 }
 
 class Trie {
+    
     constructor() {
         this.root = new Node(null, null);
     }
@@ -122,4 +123,8 @@ function main() {
     console.log(trie.autocomplete("cat"));
 }
 
-main();
+// main();
+
+module.exports = {
+    Trie : Trie
+}
