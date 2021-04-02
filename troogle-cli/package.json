@@ -1,0 +1,17 @@
+{
+  "name": "troogle",
+  "version": "1.0.0",
+  "description": "A CLI that interacts with a trie hosted online",
+  "main": "bin/index.js",
+  "bin": {
+    "troogle": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ahaan Limaye",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^16.2.0"
+  }
+}
