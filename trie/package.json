@@ -1,0 +1,11 @@
+{
+  "name": "troogle",
+  "version": "1.0.0",
+  "description": "An online trie data structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ahaan Limaye",
+  "license": "ISC"
+}
