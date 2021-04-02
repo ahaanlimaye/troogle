@@ -41,13 +41,10 @@ class Trie {
 
         ptr.isWord = false;
 
-        while (this.#isEmpty(ptr.children)) {
+        while (ptr !== this.root && this.#isEmpty(ptr.children)) {
             let char = ptr.char;
             ptr = ptr.parent;
             delete ptr.children[char];
-            if (ptr.char == null && ptr.parent == null) {
-                break;
-            }
         }
     }
 
@@ -96,12 +93,13 @@ class Trie {
     }
 
     #isEmpty(obj) {
-        return Object.keys(obj).length == 0;
+        return Object.keys(obj).length === 0;
     }
 }
 
 function main() {
     var trie = new Trie();
+    trie.add("car");
     trie.add("car");
     trie.add("dog");
     trie.add("cat");
@@ -111,6 +109,7 @@ function main() {
     trie.delete("car");
     trie.delete("dog");
     trie.delete("cat");
+    trie.delete("not");
     console.log(trie.search("car"));
     console.log(trie.search("dog"));
     console.log(trie.search("cat"));
