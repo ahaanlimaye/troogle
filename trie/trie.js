@@ -26,7 +26,11 @@ class Trie {
             ptr = ptr.children[char];
         }
 
+        if (ptr.isWord) {
+            return `Troogle has already added ${keyword} to the trie`;
+        }
         ptr.isWord = true;
+        return `Troogle successfully added ${keyword} to the trie`;
     }
 
     delete(keyword) {
@@ -36,9 +40,13 @@ class Trie {
             let char = keyword[i];
 
             if (!(char in ptr.children)) {
-                break;
+                return `Troogle can't find ${keyword} in the trie`;
             }
             ptr = ptr.children[char];
+        }
+       
+        if (!ptr.isWord) {
+            return `Troogle can't find ${keyword} in the trie`;
         }
 
         ptr.isWord = false;
@@ -48,6 +56,8 @@ class Trie {
             ptr = ptr.parent;
             delete ptr.children[char];
         }
+
+        return `Troogle successfully deleted ${keyword} from the trie`;
     }
 
     search(keyword) {

@@ -18,14 +18,12 @@ app.get('/', (req, res) => {
 
 app.post('/add', (req, res) => {
     let word = req.body.word;
-    trie.add(word);
-    res.send(`Troogle successfully added ${word} to the trie`)
+    res.send(trie.add(word));
 })
 
 app.delete('/delete', (req, res) => {
     let word = req.body.word;
-    trie.delete(word);
-    res.send(`Troogle successfully deleted ${word} from the trie`)
+    res.send(trie.delete(word));
 })
 
 app.get('/search', (req, res) => {
