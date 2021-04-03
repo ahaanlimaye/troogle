@@ -75,10 +75,19 @@ require('yargs/yargs')(process.argv.slice(2))
     // requires that a command be used
     .demandCommand(1, 'You need to use a command')
 
+    // recommends similar commands if no matching command is found
+    .recommendCommands()
+
+    .showHelpOnFail(false, 'Specify --help or -h for available options')
+
     // configures help option (-h or --help)
     .help()
-    .usage('troogle <command>')
+    .usage('Usage: \n  ' + 'troogle <command>')
     .scriptName('troogle')
-    
+
+    // configures -h and -v aliases for --help and --version
+    .alias('version', 'v')
+    .alias('help', 'h')
+
     .argv;
 
