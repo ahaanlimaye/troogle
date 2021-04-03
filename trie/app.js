@@ -38,6 +38,10 @@ app.get('/autocomplete', (req, res) => {
     res.send(trie.autocomplete(word));
 })
 
+app.get('/display', (req, res) => {
+    res.send(trie.display());
+})
+
 app.listen(port, () => {
     trie = new Trie();
     console.log(`Troogle app has started running on port ${port}`);

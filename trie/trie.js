@@ -8,9 +8,10 @@ class Node {
 }
 
 class Trie {
-    
+
     constructor() {
         this.root = new Node(null, null);
+        this.str = '';
     }
 
     add(keyword) {
@@ -18,7 +19,7 @@ class Trie {
 
         for (let i = 0; i < keyword.length; i++) {
             let char = keyword[i];
-            
+
             if (!(char in ptr.children)) {
                 ptr.children[char] = new Node(char, ptr);
             }
@@ -82,7 +83,7 @@ class Trie {
         return words;
     }
 
-   #autocompleteHelper(ptr, keyword, words) {
+    #autocompleteHelper(ptr, keyword, words) {
         if (ptr.isWord) {
             words.push(keyword + ptr.char);
         }
@@ -93,38 +94,41 @@ class Trie {
         }
     }
 
+    display() {
+        let ptr = this.root;
+        this.str = '';
+        this.#displayHelper(ptr, '', true);
+        return this.str;
+    }
+
+    #displayHelper(ptr, space, lastNode) {
+        if (lastNode) {
+            this.str += space + '\\-';
+            space += '  ';
+        }
+        else {
+            this.str += space + '|-';
+            space += '| ';
+        }
+
+        if (ptr.char == null) {
+            this.str += 'root\n';
+        }
+        else {
+            this.str += ptr.char + '\n';
+        }
+        
+        let keys = Object.keys(ptr.children);
+        for (let i = 0; i < keys.length; i++) {
+            this.#displayHelper(ptr.children[keys[i]], space, i === keys.length - 1);
+        }
+    }
+
     #isEmpty(obj) {
         return Object.keys(obj).length === 0;
     }
 }
 
-function main() {
-    var trie = new Trie();
-    trie.add("car");
-    trie.add("car");
-    trie.add("dog");
-    trie.add("cat");
-    console.log(trie.search("car"));
-    console.log(trie.search("dog"));
-    console.log(trie.search("cat"));
-    trie.delete("car");
-    trie.delete("dog");
-    trie.delete("cat");
-    trie.delete("not");
-    console.log(trie.search("car"));
-    console.log(trie.search("dog"));
-    console.log(trie.search("cat"));
-    trie.add("cat");
-    trie.add("cataract");
-    trie.add("catfish");
-    trie.add("catelon");
-    trie.add("dog");
-    trie.add("caden");
-    console.log(trie.autocomplete("cat"));
-}
-
-// main();
-
 module.exports = {
-    Trie : Trie
+    Trie: Trie
 }
