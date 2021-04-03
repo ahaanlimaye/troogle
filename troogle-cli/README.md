@@ -53,7 +53,7 @@ Options:
   -v, --version  Show version number                                   [boolean]
   -h, --help     Show help                                             [boolean]
   ```
-```annotate
+```
 (base) ahaanlimaye@Ahaans-MacBook-Pro ~ % troogle display
 \-root
 
