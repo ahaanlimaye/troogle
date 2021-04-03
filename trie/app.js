@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(queue({ activeLimit: 1, queueLimit: -1}));
 
-const PORT = process.env.PORT || 3000; // port for app to run on
+const port = process.env.PORT || 3000; // port for app to run on
 
 let trie = null; // trie variable
 
@@ -46,5 +46,5 @@ app.get('/display', (req, res) => { // GET request to display the trie in a stri
 
 app.listen(port, () => { // starts app on designated port and creates empty trie
     trie = new Trie();
-    console.log(`Troogle app has started running on port ${PORT}`);
+    console.log(`Troogle app has started running on port ${port}`);
 })
