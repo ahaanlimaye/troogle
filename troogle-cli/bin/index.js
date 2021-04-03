@@ -23,7 +23,12 @@ require('yargs/yargs')(process.argv.slice(2))
     .command('search [word]', 'Search for a word in the trie', {}, (argv) => {
         axios.get(`http://localhost:3000/search?word=${argv.word}`)
             .then((res) => {
-                console.log(res.data);
+                if (res.data) {
+                    console.log(`Troogle found ${argv.word} in the trie`);
+                }
+                else {
+                    console.log(`Troogle did not find ${argv.word} in the trie`);
+                }
             })
             .catch((err) => {
                 console.log(err);
@@ -32,7 +37,15 @@ require('yargs/yargs')(process.argv.slice(2))
     .command('autocomplete [word]', 'Autocomplete a word/prefix', {}, (argv) => {
         axios.get(`http://localhost:3000/autocomplete?word=${argv.word}`)
             .then((res) => {
-                console.log(res.data);
+                if (res.data.length > 0) {
+                    console.log(`Troogle found the following words for autocomplete:`)
+                    res.data.forEach(word => {
+                        console.log(`- ${word}`);
+                    })
+                }
+                else {
+                    console.log(`Troogle did not find any words for autocomplete`);
+                }
             })
             .catch((err) => {
                 console.log(err);
