@@ -1,19 +1,53 @@
 #!/usr/bin/env node
 
+const axios = require('axios');
 require('yargs/yargs')(process.argv.slice(2))
-    .command('add [word]', 'Add word to trie', {}, (argv) => {
-        console.log('Added word', argv.word || 'default', 'word')
+    .command('add [word]', 'Add a word to the trie', {}, (argv) => {
+        axios.post(`http://localhost:3000/add`, { word: argv.word })
+            .then((res) => {
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     })
-    .command('delete [word]', 'Add word to trie', {}, (argv) => {
-        console.log('Deleted word', argv.word || 'default', 'word')
+    .command('delete [word]', 'Delete a word from the trie', {}, (argv) => {
+        axios.delete(`http://localhost:3000/delete`, { data: { word: argv.word } })
+            .then((res) => {
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     })
-    .command('search [word]', 'Add word to trie', {}, (argv) => {
-        console.log('Searched word', argv.word || 'default', 'word')
+    .command('search [word]', 'Search for a word in the trie', {}, (argv) => {
+        axios.get(`http://localhost:3000/search?word=${argv.word}`)
+            .then((res) => {
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     })
-    .command('autocomplete [word]', 'Add word to trie', {}, (argv) => {
-        console.log('Autocompleted word', argv.word || 'default', 'word')
+    .command('autocomplete [word]', 'Autocomplete a word/prefix', {}, (argv) => {
+        axios.get(`http://localhost:3000/autocomplete?word=${argv.word}`)
+            .then((res) => {
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     })
-    .demandCommand(1, 'You need to use one command', 'You can only use one command')
+    .command('display', 'Display the trie', {}, (argv) => {
+        axios.get(`http://localhost:3000/display`)
+            .then((res) => {
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    })
+    .demandCommand(1, 1, 'You need to use one command', 'You can only use one command')
     .help()
     .argv;
 
