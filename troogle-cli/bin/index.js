@@ -2,7 +2,6 @@
 
 const axios = require('axios');
 require('yargs/yargs')(process.argv.slice(2))
-    .demandCommand(1, 'You need to use a command')
     .command('add [word]', 'Add a word to the trie', {}, (argv) => {
         axios.post(`http://localhost:3000/add`, { word: argv.word })
             .then((res) => {
@@ -48,6 +47,7 @@ require('yargs/yargs')(process.argv.slice(2))
                 console.log(err);
             })
     })
+    .demandCommand(1, 'You need to use a command')
     .help()
     .usage('troogle <command>')
     .scriptName('troogle')
