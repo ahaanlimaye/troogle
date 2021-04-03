@@ -78,6 +78,7 @@ require('yargs/yargs')(process.argv.slice(2))
     // recommends similar commands if no matching command is found
     .recommendCommands()
 
+    // recomonds running help option when there is an error
     .showHelpOnFail(false, 'Specify --help or -h for available options')
 
     // configures help option (-h or --help)
