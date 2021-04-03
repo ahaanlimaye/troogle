@@ -79,5 +79,6 @@ require('yargs/yargs')(process.argv.slice(2))
     .help()
     .usage('troogle <command>')
     .scriptName('troogle')
+    
     .argv;
 
