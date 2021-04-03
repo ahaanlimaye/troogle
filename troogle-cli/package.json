@@ -1,5 +1,5 @@
 {
-  "name": "troogle",
+  "name": "@ahaanlimaye/troogle",
   "version": "1.0.0",
   "description": "A CLI that interacts with a trie hosted online",
   "main": "bin/index.js",
@@ -14,5 +14,9 @@
   "dependencies": {
     "axios": "^0.21.1",
     "yargs": "^16.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahaanlimaye/troogle.git"
   }
 }
