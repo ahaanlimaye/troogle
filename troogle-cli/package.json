@@ -12,6 +12,7 @@
   "author": "Ahaan Limaye",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "yargs": "^16.2.0"
   }
 }
