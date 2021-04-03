@@ -11,4 +11,6 @@ A CLI (Command Line Interface) available via npm that allows users to interact w
 
 ## Installation
 Run this npm install in your terminal
-```npm install @ahaanlimaye/troogle -g```
+```
+npm install @ahaanlimaye/troogle -g
+```
