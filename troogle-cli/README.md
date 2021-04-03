@@ -4,7 +4,7 @@ A CLI (Command Line Interface) available via npm that allows users to interact w
 ## Functions
 - Add a word to the Trie
 - Delete a word from the Trie
-- Search for a word from the Trie
+- Search for a word in the Trie
 - Autocomplete a word/prefix using the Trie
 - Display a visualization of the Trie in the Command Line
 
