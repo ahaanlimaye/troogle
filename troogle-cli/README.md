@@ -109,3 +109,28 @@ Troogle successfully deleted catalog from the trie
         \-e
           \-r
 ```
+
+## Additional Features
+### Requires a Command
+If troogle is run without a command or option, it will state that a command must be used:
+```
+(base) ahaanlimaye@Ahaans-MacBook-Pro ~ % troogle             
+You need to use a command
+
+Specify --help or -h for available options
+```
+### Recommends Commands
+If a troogle command is run with a typo, it will recommend the proper command to use:
+```
+(base) ahaanlimaye@Ahaans-MacBook-Pro ~ % troogle ad hello
+Did you mean add?
+
+Specify --help or -h for available options
+```
+```
+(base) ahaanlimaye@Ahaans-MacBook-Pro ~ % troogle del hello
+Did you mean delete?
+
+Specify --help or -h for available options
+```
+
