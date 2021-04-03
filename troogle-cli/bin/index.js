@@ -3,7 +3,7 @@
 const axios = require('axios');
 require('yargs/yargs')(process.argv.slice(2))
     .command('add [word]', 'Add a word to the trie', {}, (argv) => {
-        axios.post(`http://localhost:3000/add`, { word: argv.word })
+        axios.post(`https://troogletrie.herokuapp.com/add`, { word: argv.word })
             .then((res) => {
                 console.log(res.data);
             })
@@ -12,7 +12,7 @@ require('yargs/yargs')(process.argv.slice(2))
             });
     })
     .command('delete [word]', 'Delete a word from the trie', {}, (argv) => {
-        axios.delete(`http://localhost:3000/delete`, { data: { word: argv.word } })
+        axios.delete(`https://troogletrie.herokuapp.com/delete`, { data: { word: argv.word } })
             .then((res) => {
                 console.log(res.data);
             })
@@ -21,7 +21,7 @@ require('yargs/yargs')(process.argv.slice(2))
             });
     })
     .command('search [word]', 'Search for a word in the trie', {}, (argv) => {
-        axios.get(`http://localhost:3000/search?word=${argv.word}`)
+        axios.get(`https://troogletrie.herokuapp.com/search?word=${argv.word}`)
             .then((res) => {
                 if (res.data) {
                     console.log(`Troogle found ${argv.word} in the trie`);
@@ -35,7 +35,7 @@ require('yargs/yargs')(process.argv.slice(2))
             })
     })
     .command('autocomplete [word]', 'Autocomplete a word/prefix', {}, (argv) => {
-        axios.get(`http://localhost:3000/autocomplete?word=${argv.word}`)
+        axios.get(`https://troogletrie.herokuapp.com/autocomplete?word=${argv.word}`)
             .then((res) => {
                 if (res.data.length > 0) {
                     console.log(`Troogle found the following words for autocomplete:`)
@@ -52,7 +52,7 @@ require('yargs/yargs')(process.argv.slice(2))
             })
     })
     .command('display', 'Display the trie', {}, (argv) => {
-        axios.get(`http://localhost:3000/display`)
+        axios.get(`https://troogletrie.herokuapp.com/display`)
             .then((res) => {
                 console.log(res.data);
             })
