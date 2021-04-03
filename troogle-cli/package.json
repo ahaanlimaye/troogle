@@ -4,17 +4,24 @@
   "description": "A CLI that interacts with a trie hosted online",
   "main": "bin/index.js",
   "bin": {
-    "troogle": "./bin/index.js"
+    "@ahaanlimaye/troogle": "bin/index.js",
+    "troogle": "bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "troogle",
+    "trie",
+    "cli"
+  ],
   "author": "Ahaan Limaye",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
     "yargs": "^16.2.0"
   },
+  "homepage": "https://github.com/ahaanlimaye/troogle.git",
   "repository": {
     "type": "git",
     "url": "https://github.com/ahaanlimaye/troogle.git"
