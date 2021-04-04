@@ -94,6 +94,7 @@ Troogle found cat in the trie
 Troogle did not find catfish in the trie
 (base) ahaanlimaye@Ahaans-MacBook-Pro ~ % troogle autocomplete cat
 Troogle found the following words for autocomplete:
+- cat
 - catalog
 - cater
 (base) ahaanlimaye@Ahaans-MacBook-Pro ~ % troogle delete apple
