@@ -1,6 +1,6 @@
 {
   "name": "@ahaanlimaye/troogle",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A CLI that interacts with a trie hosted online",
   "main": "bin/index.js",
   "bin": {

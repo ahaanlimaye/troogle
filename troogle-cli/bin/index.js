@@ -6,7 +6,7 @@ require('yargs/yargs')(process.argv.slice(2))
 
     // add command
     .command('add [word]', 'Add a word to the trie', {}, (argv) => {
-        axios.post(`https://troogletrie.herokuapp.com/add`, { word: argv.word }) // calls add (POST request)
+        axios.post(`https://troogletrie.herokuapp.com/add`, { word: argv.word.toLowerCase() }) // calls add (POST request)
             .then((res) => {
                 console.log(res.data);
             })
@@ -17,7 +17,7 @@ require('yargs/yargs')(process.argv.slice(2))
 
     // delete command
     .command('delete [word]', 'Delete a word from the trie', {}, (argv) => {
-        axios.delete(`https://troogletrie.herokuapp.com/delete`, { data: { word: argv.word } }) // calls delete (DELETE request)
+        axios.delete(`https://troogletrie.herokuapp.com/delete`, { data: { word: argv.word.toLowerCase() } }) // calls delete (DELETE request)
             .then((res) => {
                 console.log(res.data);
             })
@@ -28,7 +28,7 @@ require('yargs/yargs')(process.argv.slice(2))
 
     // search command
     .command('search [word]', 'Search for a word in the trie', {}, (argv) => {
-        axios.get(`https://troogletrie.herokuapp.com/search?word=${argv.word}`) // calls search (GET request)
+        axios.get(`https://troogletrie.herokuapp.com/search?word=${argv.word.toLowerCase()}`) // calls search (GET request)
             .then((res) => {
                 if (res.data) {
                     console.log(`Troogle found ${argv.word} in the trie`);
@@ -44,7 +44,7 @@ require('yargs/yargs')(process.argv.slice(2))
 
     // autocomplete command
     .command('autocomplete [word]', 'Autocomplete a word/prefix', {}, (argv) => {
-        axios.get(`https://troogletrie.herokuapp.com/autocomplete?word=${argv.word}`) // calls autocomplete (GET request)
+        axios.get(`https://troogletrie.herokuapp.com/autocomplete?word=${argv.word.toLowerCase()}`) // calls autocomplete (GET request)
             .then((res) => {
                 if (res.data.length > 0) {
                     console.log(`Troogle found the following words for autocomplete:`)
