@@ -18,7 +18,7 @@ GET:\
 `curl -X GET https://troogletrie.herokuapp.com/autocomplete?word=<query>` &#8594; returns an array of autocomplete words in the trie\
 `curl -X GET https://troogletrie.herokuapp.com/display` &#8594; returns string representation of the trie
 
-## How to Run Locally
+## How to Run Trie Server Locally
 1. Clone this Git Repository
 ```
 git clone https://github.com/ahaanlimaye/troogle
