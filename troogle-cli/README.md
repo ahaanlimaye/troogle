@@ -10,13 +10,13 @@ A CLI (Command Line Interface) available via npm that allows users to interact w
 
 
 ## Installation
-Run this npm install in terminal
+Run this npm install in terminal:
 ```
 npm install @ahaanlimaye/troogle -g
 ```
 
 ## Usage
-To use Troogle simply run the keyword `troogle` followed by a command in terminal
+To use Troogle simply run the keyword `troogle` followed by a command in terminal:
 ```
 troogle <command>
 ```
