@@ -13,9 +13,9 @@ POST:\
 DELETE:\
 `curl -d "word=<query>" -X DELETE https://troogletrie.herokuapp.com/delete` &#8594; deletes word from the trie and returns a status message
 
-GET:
-`curl -X GET https://troogletrie.herokuapp.com/search?word=<query>` &#8594; returns true if word is in the trie and false otherwise
-`curl -X GET https://troogletrie.herokuapp.com/autocomplete?word=<query>` &#8594; returns an array of autocomplete words in the trie
+GET:\
+`curl -X GET https://troogletrie.herokuapp.com/search?word=<query>` &#8594; returns true if word is in the trie and false otherwise\
+`curl -X GET https://troogletrie.herokuapp.com/autocomplete?word=<query>` &#8594; returns an array of autocomplete words in the trie\
 `curl -X GET https://troogletrie.herokuapp.com/display` &#8594; returns string representation of the trie
 
 ## How to Run Locally
