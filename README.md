@@ -1,5 +1,5 @@
 # Troogle
-A CLI (Command Line Interface) available via npm that allows users to interact with a Global Trie Data Structure
+A CLI (Command Line Interface) available via npm as [@ahaanlimaye/troogle](https://www.npmjs.com/package/@ahaanlimaye/troogle) that allows users to interact with a Global Trie Data Structure
 
 ## What is a Trie?
 A Trie is an efficient re**Trie**val data structure for words. This tree structure can search for a word in O(M) time (M being the longest word length). [Read more about Tries](https://en.wikipedia.org/wiki/Trie)
