@@ -111,7 +111,7 @@ class Trie {
         }
     }
 
-    display() {
+    display() { // solution inspired by this stackoverflow link --> https://stackoverflow.com/questions/1649027/how-do-i-print-out-a-tree-structure
 
         // recursively traverses and adds nodes to string visualization of the trie
         let ptr = this.root;
