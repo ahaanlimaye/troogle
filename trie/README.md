@@ -1,5 +1,5 @@
 # Troogle
-A CLI (Command Line Interface) available via npm that allows users to interact with a Global Trie Data Structure
+A CLI (Command Line Interface) available via npm as [@ahaanlimaye/troogle](https://www.npmjs.com/package/@ahaanlimaye/troogle) that allows users to interact with a Global Trie Data Structure
 
 ## Troogle's Trie Server
 The Trie data structure that Troogle uses is built on a node.js app that is hosted on [Heroku](https://heroku.com)\
