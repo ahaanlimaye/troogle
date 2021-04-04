@@ -27,3 +27,24 @@ curl -X GET https://troogletrie.herokuapp.com/autocomplete?word=<query>
 ```
 curl -X GET https://troogletrie.herokuapp.com/display
 ```
+
+## How to Run Locally
+1. Clone this Git Repository
+```
+git clone https://github.com/ahaanlimaye/troogle
+```
+2. CD into trie directory
+```
+cd trie
+```
+3. Install npm dependencies
+```
+npm install
+```
+4. Run app.js and open http://localhost:3000
+```
+node app.js
+```
+
+## Questions?
+Contact me at ahaan.limaye@gmail.com
