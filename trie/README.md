@@ -8,12 +8,17 @@ Domain: https://troogletrie.herokuapp.com/
 
 ## REST Endpoints
 POST:
-- `https://troogletrie.herokuapp.com/add`: CURL request &#8594; `curl -d "word=<query>" -X POST https://troogletrie.herokuapp.com/add`
+- `https://troogletrie.herokuapp.com/add`
+  - CURL request &#8594; `curl -d "word=<query>" -X POST https://troogletrie.herokuapp.com/add`
 
 DELETE:
-- `https://troogletrie.herokuapp.com/delete`: CURL request &#8594; `curl -d "word=<query>" -X DELETE https://troogletrie.herokuapp.com/delete`
+- `https://troogletrie.herokuapp.com/delete`
+  - CURL request &#8594; `curl -d "word=<query>" -X DELETE https://troogletrie.herokuapp.com/delete`
 
 GET:
-- `https://troogletrie.herokuapp.com/search?word=<query>`: CURL request &#8594; `curl -X GET https://troogletrie.herokuapp.com/search?word=<query>`
-- `https://troogletrie.herokuapp.com/autocomplete?word=<query>`: CURL request &#8594; `curl -X GET https://troogletrie.herokuapp.com/autocomplete?word=<query>`
-- `https://troogletrie.herokuapp.com/display`: CURL request &#8594; `curl -X GET https://troogletrie.herokuapp.com/display`
+- `https://troogletrie.herokuapp.com/search?word=<query>`
+  - CURL request &#8594; `curl -X GET https://troogletrie.herokuapp.com/search?word=<query>`
+- `https://troogletrie.herokuapp.com/autocomplete?word=<query>`
+  - CURL request &#8594; `curl -X GET https://troogletrie.herokuapp.com/autocomplete?word=<query>`
+- `https://troogletrie.herokuapp.com/display`
+  - CURL request &#8594; `curl -X GET https://troogletrie.herokuapp.com/display`
