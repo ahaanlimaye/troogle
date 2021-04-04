@@ -1,12 +1,13 @@
 # Troogle
 A CLI (Command Line Interface) available via npm as [@ahaanlimaye/troogle](https://www.npmjs.com/package/@ahaanlimaye/troogle) that allows users to interact with a Global Trie Data Structure
 
-## Functions
+## Functionality
 - Add a word to the Trie
 - Delete a word from the Trie
 - Search for a word in the Trie
 - Autocomplete a word/prefix using the Trie
 - Display a visualization of the Trie in the Command Line
+- Words are not case sensitive (i.e. the word "cat" is treated the same as the word "Cat")
 
 
 ## Installation
