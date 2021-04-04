@@ -7,15 +7,11 @@ The Troogle CLI interacts with the Trie Server using REST endpoints created usin
 Domain: https://troogletrie.herokuapp.com/
 
 ## REST Endpoints
-POST:
-```
-curl -d "word=<query>" -X POST https://troogletrie.herokuapp.com/add
-```
+POST:\
+`curl -d "word=<query>" -X POST https://troogletrie.herokuapp.com/add` &#8594; adds word to the trie and sends back a status message
 
-DELETE:
-```
-curl -d "word=<query>" -X DELETE https://troogletrie.herokuapp.com/delete
-```
+DELETE:\
+`curl -d "word=<query>" -X DELETE https://troogletrie.herokuapp.com/delete` &#8594; deletes word from the trie and sends back a status message
 
 GET:
 ```
