@@ -48,7 +48,7 @@ class Trie {
             }
             ptr = ptr.children[char];
         }
-       
+
         // sets isWord of last character node to false and removes any leaf nodes that are not words from the trie
         if (!ptr.isWord) {
             return `Troogle can't find ${keyword} in the trie`; // returns if keyword doesn't exist
@@ -77,7 +77,7 @@ class Trie {
     }
 
     autocomplete(keyword) { // takes in keyword parameter and returns autocomplete words for it (not including the keyword)
-        
+
         // traverses to find last character node of keyword
         let ptr = this.root;
         for (let i = 0; i < keyword.length; i++) {
@@ -90,6 +90,9 @@ class Trie {
 
         // recursively traverses through each child node of the last character node and adds words to an array
         let words = []; // array of autocomplete words
+        if (ptr.isWord) {
+            words.push(keyword);
+        }
         for (let char in ptr.children) {
             this.#autocompleteHelper(ptr.children[char], keyword, words); // recursive helper function
         }
@@ -104,10 +107,8 @@ class Trie {
         }
 
         // recursively traverses children if the node has child nodes
-        if (!(this.#isEmpty(ptr.children))) {
-            for (let char in ptr.children) {
-                this.#autocompleteHelper(ptr.children[char], keyword + ptr.char, words);
-            }
+        for (let char in ptr.children) {
+            this.#autocompleteHelper(ptr.children[char], keyword + ptr.char, words);
         }
     }
 
