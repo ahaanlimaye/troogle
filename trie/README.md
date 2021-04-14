@@ -35,6 +35,3 @@ npm install
 ```
 node app.js
 ```
-
-## Questions?
-Contact me at ahaan.limaye@gmail.com
