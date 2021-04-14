@@ -135,6 +135,3 @@ Did you mean delete?
 
 Specify --help or -h for available options
 ```
-
-## Questons?
-Contact me at ahaan.limaye@gmail.com
